@@ -21,7 +21,8 @@ namespace MyFood.Migrations
             modelBuilder.Entity("MyFood.Models.Food", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(36)")
+                        .HasMaxLength(36);
 
                     b.Property<decimal>("Carb")
                         .HasColumnType("decimal(18,6)");
@@ -29,8 +30,10 @@ namespace MyFood.Migrations
                     b.Property<decimal>("Fat")
                         .HasColumnType("decimal(18,6)");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
 
                     b.Property<decimal>("Protein")
                         .HasColumnType("decimal(18,6)");

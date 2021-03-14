@@ -12,11 +12,11 @@ function loadDataTable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "name", "width": "20%" },
+            { "data": "name", "width": "35%" },
+            { "data": "servingSize", "width": "15%" },
             { "data": "carb", "width": "10%" },
             { "data": "protein", "width": "10%" },
             { "data": "fat", "width": "10%" },
-            { "data": "servingsize", "width": "10%" },
             {
                 "data": "id",
                 "render": function (data) {
@@ -30,7 +30,7 @@ function loadDataTable() {
                             Delete
                         </a>
                         </div>`;
-                }, "width": "40%"
+                }, "width": "20%"
             }
         ],
         "language": {

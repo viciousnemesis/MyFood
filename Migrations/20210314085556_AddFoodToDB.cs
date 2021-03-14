@@ -2,7 +2,7 @@
 
 namespace MyFood.Migrations
 {
-    public partial class AddFoodToDb : Migration
+    public partial class AddFoodToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,12 +10,12 @@ namespace MyFood.Migrations
                 name: "Foods",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    Name = table.Column<int>(nullable: false),
+                    Id = table.Column<string>(maxLength: 36, nullable: false),
+                    Name = table.Column<string>(maxLength: 60, nullable: false),
+                    ServingSize = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
                     Carb = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
                     Protein = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
-                    Fat = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
-                    ServingSize = table.Column<decimal>(type: "decimal(18,6)", nullable: false)
+                    Fat = table.Column<decimal>(type: "decimal(18,6)", nullable: false)
                 },
                 constraints: table =>
                 {

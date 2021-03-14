@@ -53,6 +53,7 @@ namespace MyFood.Controllers
                 if (Food.Id == null)
                 {
                     //create
+                    Food.Id = Guid.NewGuid().ToString();
                     _db.Foods.Add(Food);
                 }
                 else
