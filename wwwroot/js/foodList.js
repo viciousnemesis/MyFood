@@ -26,11 +26,11 @@ function loadDataTable() {
                         </a>
                         &nbsp;
                         <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'
-                            onclick=Delete('/food/Delete?id='+${data})>
+                            onclick=Delete('/food/Delete?id=${data}')>
                             Delete
                         </a>
                         </div>`;
-                }, "width": "20%"
+                }, "width": "40%"
             }
         ],
         "language": {
