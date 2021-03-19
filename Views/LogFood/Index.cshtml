@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "LogFood";
+}
+
+<div class="container row p-0 m-0">
+    <div class="col-6">
+        <h2 class="text-info">Log Food</h2>
+    </div>
+    <div class="col-3 offset-3">
+        <a asp-action="Upsert" asp-controller="FoodList" class="btn btn-info form-control text-white">
+            Add Food
+        </a>
+    </div>
+    <div class="col-12 border p-3">
+        <table id="DT_FoodLog" class="table table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Meal</th>
+                    <th>Food</th>
+                    <th>kcal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Snack</td>
+                    <td>yogurt</td>
+                    <td>223</td>
+                </tr>
+                <tr>
+                    <td>Dessert</td>
+                    <td>Blueberries</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>Breakfast</td>
+                    <td>Apple</td>
+                    <td>156</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td>Salmon</td>
+                    <td>350</td>
+                </tr>
+                <tr>
+                    <td>Breakfast</td>
+                    <td>Coffee</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Dessert</td>
+                    <td>Wheyz</td>
+                    <td>255</td>
+                </tr>
+                <tr>
+                    <td>Lunch</td>
+                    <td>Kale</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td>Broccoli</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Snack</td>
+                    <td>Carrots</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Dessert</td>
+                    <td>Almonds</td>
+                    <td>99</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/dailyLogList.js"></script>
+
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+
+    <link href="https://cdn.datatables.net/rowgroup/1.0.2/css/rowGroup.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.datatables.net/rowgroup/1.0.2/js/dataTables.rowGroup.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.js"></script>
+
+    <link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+
+
+
+}
+
