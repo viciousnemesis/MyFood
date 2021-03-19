@@ -59,6 +59,61 @@ function loadDataTable() {
 
 }
 
+$(function () {
+    $("#datepicker").datepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY',
+        onSelect: function () {
+            UpdateDayLabel();
+        }
+    });
+});
+
+
+$("#subtractday").click(function () {
+    var date = $('#datepicker').datepicker('getDate', '-1d');
+    date.setDate(date.getDate() - 1);
+    $('#datepicker').datepicker('setDate', date);
+    UpdateDayLabel();
+})
+
+
+$("#addday").click(function () {
+    var date = $('#datepicker').datepicker('getDate', '+1d');
+    date.setDate(date.getDate() + 1);
+    $('#datepicker').datepicker('setDate', date);
+    UpdateDayLabel();
+})
+
+
+function UpdateDayLabel() {
+    var dateSelected = $("#datepicker").datepicker("getDate").getTime();
+    var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    var yesterday = new Date();
+    yesterday.setDate(today.getDate() - 1)
+    yesterday.setHours(0, 0, 0, 0);
+    var tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1)
+    tomorrow.setHours(0, 0, 0, 0);
+
+    var text = ""
+    if (dateSelected < yesterday) {
+        text = `${Math.round(Math.abs((today.getTime() - dateSelected) / (oneDay)))} days ago`;
+    } else if (dateSelected === yesterday.getTime()) {
+        text = "Yesterday";
+    } else if (dateSelected === today.getTime()) {
+        text = "Today";
+    } else if (dateSelected === tomorrow.getTime()) {
+        text = "Tomorrow";
+    } else if (dateSelected > tomorrow) {
+        text = `${Math.round(Math.abs((today.getTime() - dateSelected) / (oneDay)))} days from now`;
+    }
+
+    $("#daylabel").text(text).css('font-weight', 'bold')
+}
+
 function Delete(url) {
     swal({
         title: "Are you sure?",
